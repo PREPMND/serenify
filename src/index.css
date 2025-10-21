@@ -1,7 +1,11 @@
 /*HEADER*/
 body{
   overflow-x: hidden;
-
+  animation: fadeIn 1.5s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 .header {
     display: flex;
@@ -9,14 +13,15 @@ body{
     justify-content: space-evenly;
     gap: 10px;
     padding: 10px 20px;
-    color: rgb(7, 159, 83);
+    color: rgb(234, 131, 179);
     box-shadow: 0px 2px 0px rgba(183, 208, 208, 0.25);
     user-select: none;
 }
 .logo{
-  height: 50px;
-  width: 50px;
+  height: 90px;
+  width: 90px;
   overflow: hidden;
+  border-radius: 2vh;
 }
 .s-header{
   display: flex;
@@ -78,6 +83,7 @@ body{
   top: 60px;       
   right: 40px;
   width: 180px;
+  border-radius:2vh;
   opacity: 0;
   transform: translateY(20px) scale(0.9);
   transition: all 0.9s ease-in-out;
@@ -89,13 +95,14 @@ body{
 }
 .s-logo-2 {
   position: fixed;
-  top: 60px;       
+  top: 50px;       
   left: 30px;
-  width: 60px;
+  width: 90px;
   opacity: 0;
   transform: translateY(20px) scale(0.9);
   transition: all 0.9s ease-in-out;
   pointer-events: none; 
+  border-radius: 2vh;
 } 
 .s-header h1:hover ~ .s-logo-2 {
   opacity: 1;
@@ -105,7 +112,7 @@ body{
 .issue{
   display: flex;
   justify-content: space-evenly;
-  margin-top: 20px;
+  margin-top: 16px;
 }
 .issue img {
   height: 230px;
@@ -126,23 +133,6 @@ body{
   gap: 10px;
   user-select: none;
 }
-.arrow{
-  position: fixed;
-  bottom: 40px;       
-  right: 38%;
-  width: 60px;
-  transform: translateY(20px) scale(0.9);
-  transition: all 0.9s ease-in-out;
-  pointer-events: none; 
-  opacity: 1;
-  animation: fadeOut 10s forwards;
-}
-@keyframes fadeOut {
-  0%{opacity: 1;visibility: visible;}
-  99%{opacity: 1;visibility: visible;}
-  100%{opacity: 1;visibility: hidden;} 
-}
-/*FILL*/
 .fill{
   text-align: center;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -268,11 +258,7 @@ input::placeholder{
   100% {
     transform: translateX(-50%);
   }
-}/*
-@keyframes spin{
-  from{translate:0;}
-  to{translate:-100%;}
-}*/
+}
 .alz-q ,.dem-q ,.dys-q{
   border-radius: 2vh;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -305,7 +291,7 @@ input::placeholder{
 .instruction{
   width: 80%;
   margin: auto;
-  margin-top: 170px;
+  margin-top: 100px;
   margin-bottom: 50px;
   padding: 40px 20px;
   border: 2px solid rgb(200, 200, 200);
@@ -328,4 +314,38 @@ input::placeholder{
   background-clip: text;
   -webkit-background-clip: text;
   color: rgb(1, 5, 40);
+}
+.thank-section, .help-section {
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #fff6fa, #fcecf4);
+  color: #2f3e35;
+  font-size: 17px;
+  animation: fadeIn 1.5s ease;
+  width: 100%;
+  font-family: 'Segoe UI'
+}
+.help-section li{
+  list-style: none;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.next-feature{
+  background: url(./assets/dys-back.jpg);
+  width: 80%;
+  margin: auto;
+  background-size: cover;
+  padding: 4px 16px;
+  margin-bottom: 60px;
+  border-radius: 3vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: all 0.7s ease-in-out;
+}
+.next-feature:hover{
+  transform: scale(1.05);
+  color:white
 }
